@@ -2,11 +2,14 @@
 
 Source repository for the [divnet-rs](https://github.com/mooreryan/divnet-rs) documentation book: [divnet-rs: a Rust implementation of DivNet](https://mooreryan.github.io/divnet-rs-book).
 
-## Serving locally
+## Development
 
-Building requires [mdBook](https://github.com/rust-lang/mdBook).
-
-When working on the documentation, use the `./bin/serve.sh` script to set up the development server.
+- Building requires [mdBook](https://github.com/rust-lang/mdBook).
+- To use the `justfile`, [install Just](https://just.systems).
+- When working on the documentation, use `just serve` to set up the development server.
+- Use `just build` to build the changes when you're ready.
+  - This changes site files in `docs` that will be picked up by the GitHub pages build.
+  - If you forget this step, the site will not be updated.
 
 ## License
 
