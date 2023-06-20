@@ -4,37 +4,25 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Differences from the R package - divnet-rs: a Rust implementation of DivNet</title>
-        
-        
 
 
         <!-- Custom HTML head -->
         
-
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -42,9 +30,7 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -103,8 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -120,29 +105,24 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">divnet-rs: a Rust implementation of DivNet</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,7 +130,6 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
@@ -163,14 +142,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#important-differences-from-reference-implementation" id="important-differences-from-reference-implementation">Important differences from reference implementation</a></h1>
+                        <h1 id="important-differences-from-reference-implementation"><a class="header" href="#important-differences-from-reference-implementation">Important differences from reference implementation</a></h1>
 <p>DivNet and <code>divnet-rs</code> are very similar and use the same algorithms.  However,
 there are some differences.  I mention some of the important ones here.</p>
-<h2><a class="header" href="#input--output-files" id="input--output-files">Input &amp; Output files</a></h2>
+<h2 id="input--output-files"><a class="header" href="#input--output-files">Input &amp; Output files</a></h2>
 <p>The input and output files are different.  To see how to get files into
 <code>divnet-rs</code> from R and then back in to R once <code>divnet-rs</code> is finished, see the
 scripts in the <a href="./lee_data">Lee example directory</a>.</p>
-<h2><a class="header" href="#diagonal-network-only" id="diagonal-network-only">Diagonal network only</a></h2>
+<h2 id="diagonal-network-only"><a class="header" href="#diagonal-network-only">Diagonal network only</a></h2>
 <p>The only network option is <code>diagonal</code>.  Here is an
 <a href="https://github.com/adw96/DivNet/issues/32#issuecomment-521727997">quote from Amy Willis</a>
 that supports this decision:</p>
@@ -190,10 +169,10 @@ than network structure), so I don't think you are going to lose too much anyway.
 <a href="https://github.com/adw96/DivNet">R implemntation of DivNet</a> can handle them,
 just use that instead...it will let you estimate the network structure of your 
 data!</p>
-<h2><a class="header" href="#bootstrapping" id="bootstrapping">Bootstrapping</a></h2>
+<h2 id="bootstrapping"><a class="header" href="#bootstrapping">Bootstrapping</a></h2>
 <p>Only the parametric bootstrap is available.  You cannot do the nonparametric
 bootstrap.</p>
-<h2><a class="header" href="#monte-carlo-iterations-and-burn" id="monte-carlo-iterations-and-burn">Monte-Carlo iterations and burn</a></h2>
+<h2 id="monte-carlo-iterations-and-burn"><a class="header" href="#monte-carlo-iterations-and-burn">Monte-Carlo iterations and burn</a></h2>
 <p>The MC iterations must be even, and the MC burn must be 1/2 of the MC
 iterations.  This allows me to do a little trick to cut the overall memory usage
 by about 1/3.</p>
@@ -202,17 +181,13 @@ by about 1/3.</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="lee_data_walkthrough.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
 
-                        
                             <a rel="next" href="citing_divnet.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -220,64 +195,35 @@ by about 1/3.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="lee_data_walkthrough.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
 
-                
                     <a rel="next" href="citing_divnet.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
 
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
-        
 
-        
 
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
 
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
     </body>
 </html>
