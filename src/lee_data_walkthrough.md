@@ -2,7 +2,7 @@
 
 You can find the scripts and data for this walk-through [on the GitHub page](https://github.com/mooreryan/divnet-rs/tree/master/test_files/lee_data_walkthrough).
 
-DELETE? There, I show you how to analyze the Lee dataset included with the DivNet R package with `divnet-rs`, including getting data out of R into the format that `divnet-rs` wants, running `divnet-rs`, and then importing data back in to how and how to use it.
+There, you can see how to analyze the Lee dataset included with the DivNet R package with `divnet-rs`, including getting data out of R into the format that `divnet-rs` wants, running `divnet-rs`, and then importing data back in to how and how to use it.
 
 # Comparing DivNet and divnet-rs
 
