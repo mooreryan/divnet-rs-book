@@ -10,19 +10,17 @@ I will use the Lee data grouped by phylum as in the [DivNet docs](https://github
 
 ## Run DivNet and generate divnet-rs input files
 
-First you should check out [1_lee_phylum.R](https://github.com/mooreryan/divnet-rs/tree/master/test_files/lee_data_walkthrough/1_lee_phylum.R).  It is an R script for running DivNet on the Lee data aggregated by phylum.  It also generates the data that will be used fir `divnet-rs`.
+First you should check out [1_lee_phylum.R](https://github.com/mooreryan/divnet-rs/tree/master/test_files/lee_data_walkthrough/1_lee_phylum.R). It is an R script for running DivNet on the Lee data aggregated by phylum. It also generates the data that will be used fir `divnet-rs`.
 
 ## Run divnet-rs
 
-
-
-Now you can run `divnet-rs` using the [2_lee_phylum_config.toml](https://github.com/mooreryan/divnet-rs/tree/master/test_files/lee_data_walkthrough/2_lee_phylum_config.toml) config file.  Something like this:
+Now you can run `divnet-rs` using the [2_lee_phylum_config.toml](https://github.com/mooreryan/divnet-rs/tree/master/test_files/lee_data_walkthrough/2_lee_phylum_config.toml) config file. Something like this:
 
 ```
 divnet-rs ./test_files/lee_data_walkthrough/2_lee_phylum_config.toml
 ```
 
-You will notice that it is faster, but I just want to make it clear that on a dataset as small as this one I would use the the R version of DivNet.  Generally, you would only be using `divnet-rs` if whatever you want to do is impossible in the R version!
+You will notice that it is faster, but I just want to make it clear that on a dataset as small as this one I would use the the R version of DivNet. Generally, you would only be using `divnet-rs` if whatever you want to do is impossible in the R version!
 
 ## Import divnet-rs output back into R
 
@@ -40,11 +38,15 @@ OPENBLAS_NUM_THREADS=1 divnet-rs ./docs/lee_data/2_lee_phylum_config.toml
 Rscript ./docs/lee_data/3_import_divnet_rs_data.R
 ```
 
-Note the `OPENBLAS_NUM_THREADS=1` part in front of the `divnet-rs` command.  In my tests, forcing OpenBLAS to use a single thread results in much better `divnet-rs` performance.  See [this section of the divnet-rs manual](./config_files.md#number-of-threads) for more information about this.
+Note the `OPENBLAS_NUM_THREADS=1` part in front of the `divnet-rs` command. In my tests, forcing OpenBLAS to use a single thread results in much better `divnet-rs` performance. See [this section of the divnet-rs manual](./config_files.md#number-of-threads) for more information about this.
 
 ### Plots
 
-And here are the plots!  One thing that you will notice is that the error bars are a bit different.  This is because the MC-MH algorithm DivNet uses (and thus that `divnet-rs` uses) is dependent on random number generation.  So you'll get some noise run-to-run.
+And here are the plots!
+
+One thing that you will notice is that the error bars are a bit different. This is because the MC-MH algorithm DivNet uses (and thus that `divnet-rs` uses) is dependent on random number generation. So you'll get some noise run-to-run.
+
+Another thing you may notice is that a lot of the samples have the exact same estimate for Shannon index. This is expected. Rather than giving you estimates of diversity based on each sample, the DivNet method uses the biological replicates and covariate info to try and estimate the diversity of thea ecosystem/treatment/grouping/etc that you are interested in. Thus, within each group specified by your model/covariates, you will get the same alpha estimates and taxa estimated relative abundance. For more info, see DivNet's [getting started vignette](https://github.com/adw96/DivNet/blob/main/vignettes/getting-started.Rmd).
 
 #### DivNet
 
